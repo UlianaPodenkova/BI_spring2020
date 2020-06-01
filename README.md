@@ -12,10 +12,15 @@
 
 ## System requirements
 12CPU 24Gb, Ubuntu18.04
+
 SRA tools  "fastq-dump" version 2.10.3
+
 FastQC v0.11.5
+
 multiqc, version 1.8
+
 cutadapt 1.15
+
 TrimGalore-0.6.5
 GNU parallel 20161222 (http://www.gnu.org/software/parallel,Tange O. et al. Gnu parallel-the command-line power tool //The USENIX Magazine. – 2011. – Т. 36. – №. 1. – С. 42-47.)
 MetaPhlAn2
