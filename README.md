@@ -45,7 +45,7 @@ chmod+x get_SRAdata.sh
 cat reads_not_tested | xargs -n 1 bash get_SRAdata.sh
 ```
 2. Quality control
-Using FastQC and MultiQC 
+using FastQC and MultiQC 
 
 ```{bash}
 fastqc  *.fastq.gz; multiqc *.zip >> data/read_qc
@@ -54,21 +54,20 @@ In output directory multiqc_data we found file multiqc_fastq.txt , containing qu
 ```{bash}
 awk -F'\t' '{if((($10*$5)/2130580)>30)print$1}' <multiqc_fastqc.txt 
 ```
-(where 2130580 - genome size of *S.pneumoniae)
+(2130580 - genome size of *S.pneumoniae)
 
 3. Trimming using Trim Galore and GNU Parallel
 ```{bash}
 parallel --xapply ~/data/reads/TrimGalore-0.6.5/trim_galore --paired --cores 4 --path_to_cutadapt /home/uliana/.local/bin/cutadapt --fastqc -o trim_galore/ ::: *_1.fastq.gz ::: *_2.fastq.gz
 ```
 
-4. Repeated quality check
-Fastqc was included in Trim Galore, so using multiqc we checked GC% (39-42) and adapters
+4. Repeated quality check. Fastqc was included into Trim Galore, so using multiqc we checked GC% (39-42) and adapters
 ```{bash}
 multiqc *.zip
 awk -F'\t' '{print$21}’ <multiqc_fastqc.txt 
 ```
 
-5. Contamination analysis usinf MetaPhlAn2
+5. Contamination analysis using MetaPhlAn2
 ```{bash}
 wget -P ~/soft  https://www.dropbox.com/s/ztqr8qgbo727zpn/metaphlan2.zip?dl=0
 for f in *.fastq.gz;
@@ -81,8 +80,7 @@ grep -E "(s__)|(^ID)" merged_abundance_table.txt | grep -v "t__" | sed 's/^.*s__
 
 ```
 
-6. Assembling *de novo
-Thus, we formed a list of reads to assemble named "my_reads"
+6. Assembling *de novo*. Thus, we formed a list of reads to assemble named "my_reads".
 Command to start the assembling :
 ```{bash}
 while read i; do unicycler -1 “$i”_1_val_1.fq.gz -2 “$i”_2_val_2.fq.gz  -o /mnt/data/assembl2 -t 10 --spades_path /home/daria/soft/SPAdes-3.14.1-Linux/bin/spades.py
