@@ -31,3 +31,27 @@
 * R packages dummies, FactoMineR, factoextra
 
 
+## Pipeline
+1. Downloading reads
+We had a list of id's named “reads_not_tested”. To download paired reads from NCBI SRA I wrote this script:
+
+touch get_SRAdata.sh
+nano get_SRAdata.sh
+#!/usr/bin/bash
+fastq-dump --split-e -I --gzip -O ~/data/reads2 --skip-technical $1
+
+chmod+x get_SRAdata.sh
+
+cat reads_not_tested | xargs -n 1 bash get_SRAdata.sh
+
+2. Quality control
+Using FastQC and MultiQC 
+
+```{bash}
+fastqc  *.fastq.gz; multiqc *.zip >> data/read_qc
+```
+In output directory multiqc_data we found file multiqc_fastq.txt , containing quality reports. To get a list of reads with a coverage of more than 30, we used the following command:
+```{bash}
+awk -F'\t' '{if((($10*$5)/2130580)>30)print$1}' <multiqc_fastqc.txt 
+```
+(where 2130580 - genome size of *S.pneumoniae)
