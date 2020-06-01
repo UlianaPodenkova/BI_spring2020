@@ -28,14 +28,23 @@ GNU parallel 20161222 (http://www.gnu.org/software/parallel,Tange O. et al. Gnu 
 MetaPhlAn2
 
 For Unicycler pipeline:
+
 SPAdes-3.14.1-Linux 
+
 makeblastdb 2.6.0+
+
 tblastn 2.6.0+
+
 bowtie2 2.3.4.1
+
 bowtie2-build 2.3.4.1
+
 samtools 1.7
+
 java 11.0.7
+
 R version 3.5.3
+
 R packages dummies, FactoMineR, factoextra
 
 
