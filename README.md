@@ -105,4 +105,4 @@ To perform the further analysis we created new table, containing id's of samples
 
 
 9. Some results: 
-[1]: https://sun9-72.userapi.com/c857216/v857216474/1a9c2f/8pI8EKWrVaQ.jpg
+![] (https://sun9-72.userapi.com/c857216/v857216474/1a9c2f/8pI8EKWrVaQ.jpg)
