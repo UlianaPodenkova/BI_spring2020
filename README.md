@@ -89,15 +89,15 @@ grep -E "(s__)|(^ID)" merged_abundance_table.txt | grep -v "t__" | sed 's/^.*s__
 ```
 There are three parts to this command. The first grep searches the file for the regular expression "(s__)|(^ID)" which matches to those lines with species information and also to the header. The second grep does not print out any lines with strain information (labeled as t__). The sed removes the full taxonomy from each line so the first column only includes the species name.
 
-The new abundance table (merged_abundance_table_species.txt) will contain only the species abundances with just the species names (instead of the full taxonomy).
+The new abundance table (merged_abundance_table_species.txt) will contain only the species abundances with just the species names (instead of the full taxonomy). We had 100% of *S.pneumoniae* detected in our data.
 
-6. Assembling *de novo*. Thus, we formed a list of reads to assemble named "my_reads".
+6. Assembling *de novo*. Thus, we formed a list of reads to assemble named "my_reads". Using Unicycler - an assembly pipeline for bacterial genomes. It can assemble Illumina read sets where it functions as a SPAdes-optimiser.
 Command to start the assembling :
 ```{bash}
 while read i; do unicycler -1 “$i”_1_val_1.fq.gz -2 “$i”_2_val_2.fq.gz  -o /mnt/data/assembl2 -t 10 --spades_path /home/daria/soft/SPAdes-3.14.1-Linux/bin/spades.py
  ; done < my_reads
 ```
-7. Using the Genome Comparator we performed a comparison of *de novo* assembled *S.pneumoniae* genomes 81 sequence type.
+7. Using the Genome Comparator (pubMLST) we performed a comparison of *de novo* assembled *S.pneumoniae* genomes 81 sequence type.
 Genomes of *S.pneumoniae* isolates from blood and cerebrospinal fluid were compared with genomes of isolates from the nasopharynx of the same genetic line. Thus as a result of comparison, we received a table with different alleles of the detected genes (we tested the core genome of *S.pneumoniae*), table named __variable1__.
 To perform the further analysis we created new table, containing id's of samples and source of their extraction (blood/cerebrospinal fluid/nasopharynx), named __id81source__
 
