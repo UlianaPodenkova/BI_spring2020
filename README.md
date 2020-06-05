@@ -97,6 +97,12 @@ Command to start the assembling :
 while read i; do unicycler -1 “$i”_1_val_1.fq.gz -2 “$i”_2_val_2.fq.gz  -o /mnt/data/assembl2 -t 10 --spades_path /home/daria/soft/SPAdes-3.14.1-Linux/bin/spades.py
  ; done < my_reads
 ```
-7. We chose sequence type 81 (ST81) 
+7. Using the Genome Comparator we performed a comparison of *de novo* assembled *S.pneumoniae* genomes 81 sequence type.
+Genomes of *S.pneumoniae* isolates from blood and cerebrospinal fluid were compared with genomes of isolates from the nasopharynx of the same genetic line. Thus as a result of comparison, we received a table with different alleles of the detected genes (we tested the core genome of *S.pneumoniae*), table named __variable1__.
+To perform the further analysis we created new table, containing id's of samples and source of their extraction (blood/cerebrospinal fluid/nasopharynx), named __id81source__
 
+8. We uploaded tables __variable1__ and __id81source__ in RStudio and performed PCA analysis using  dummies, FactoMineR snd factoextra packages. 
+
+
+9. Some results: 
 
