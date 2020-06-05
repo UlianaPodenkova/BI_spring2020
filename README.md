@@ -104,5 +104,8 @@ To perform the further analysis we created new table, containing id's of samples
 8. We uploaded tables __variable1__ and __id81source__ in RStudio and performed PCA analysis using  dummies, FactoMineR snd factoextra packages. 
 
 
-9. Some results: 
-![] (https://sun9-72.userapi.com/c857216/v857216474/1a9c2f/8pI8EKWrVaQ.jpg)
+## Results
+* The PCA analysis showed that groups of isolates from carriers and patients actually form separate clusters.
+* We also established significant variables involved in the formation of the group variable “source of extraction,” for example, gene encoding Acetyltransferase, GNAT family; 6-phospho-beta-glucosidase.
+It is necessary to analyze the literature to understand exactly how these genes affect the invasiveness of *S.pneumoniae*
+Thus, we completed almost all the tasks, obtained valid results and a lot of data for further research.
