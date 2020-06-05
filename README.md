@@ -17,7 +17,7 @@
 * multiqc, version 1.8
 * cutadapt 1.15
 * TrimGalore-0.6.5
-* GNU parallel 20161222 (http://www.gnu.org/software/parallel,Tange O. et al. Gnu parallel-the command-line power tool //The USENIX Magazine. – 2011. – Т. 36. – №. 1. – С. 42-47.)
+* GNU parallel 20161222 (http://www.gnu.org/software/parallel Tange O. et al. Gnu parallel-the command-line power tool //The USENIX Magazine. – 2011. – Т. 36. – №. 1. – С. 42-47.)
 * MetaPhlAn2
 * For Unicycler pipeline:
   * SPAdes-3.14.1-Linux 
@@ -72,7 +72,7 @@ awk -F'\t' '{print$21}’ <multiqc_fastqc.txt
 ```{bash}
 wget -P ~/soft  https://www.dropbox.com/s/ztqr8qgbo727zpn/metaphlan2.zip?dl=0
 ```
-Since we want to analyze many samples at the same time, we wrote this:
+Since we wanted to analyze many samples at the same time, we wrote this:
 ```{bash}
 for f in *.fastq.gz;
 do python2 /root/soft/metaphlan2/metaphlan2.py $f --input_type fastq --nproc 1 > ${f%.fastq.gz}_profile.txt ;
@@ -106,6 +106,15 @@ To perform the further analysis we created new table, containing id's of samples
 
 ## Results
 * The PCA analysis showed that groups of isolates from carriers and patients actually form separate clusters.
-* We also established significant variables involved in the formation of the group variable “source of extraction,” for example, gene encoding Acetyltransferase, GNAT family; 6-phospho-beta-glucosidase.
+* We also established significant variables involved in the formation of the group variable “source of extraction,” for example, genes encoding Acetyltransferase, GNAT family; 6-phospho-beta-glucosidase.
 It is necessary to analyze the literature to understand exactly how these genes affect the invasiveness of *S.pneumoniae*
 Thus, we completed almost all the tasks, obtained valid results and a lot of data for further research.
+
+## References
+1. PubMLST.org
+2. Tange O. et al. Gnu parallel-the command-line power tool //The USENIX Magazine. – 2011. – Т. 36. – №. 1. – С. 42-47.
+3. MultiQC: Summarize analysis results for multiple tools and samples in a single report Philip Ewels, Måns Magnusson, Sverker Lundin and Max Käller Bioinformatics (2016)
+4. FastQC: A Quality Control Tool for High Throughput Sequence Data [Online]. Available online at: http://www.bioinformatics.babraham.ac.uk/projects/fastqc/ (2015)
+5. Wick R. R. et al. Unicycler: resolving bacterial genome assemblies from short and long sequencing reads //PLoS computational biology. – 2017. – Т. 13. – №. 6. – С. e1005595.
+6. Metagenomic microbial community profiling using unique clade-specific marker genes
+Nicola Segata, Levi Waldron, Annalisa Ballarini, Vagheesh Narasimhan, Olivier Jousson, Curtis Huttenhower. Nature Methods, 8, 811–814, 2012
