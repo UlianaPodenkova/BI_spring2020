@@ -54,7 +54,7 @@ In output directory multiqc_data we found file multiqc_fastq.txt , containing qu
 ```{bash}
 awk -F'\t' '{if((($10*$5)/2130580)>30)print$1}' <multiqc_fastqc.txt 
 ```
-(2130580 - genome size of *S.pneumoniae)
+(2130580 - genome size of *S.pneumoniae*)
 
 3. __Trimming__ using Trim Galore and GNU Parallel
 ```{bash}
