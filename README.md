@@ -106,10 +106,13 @@ To perform the further analysis we created new table, containing id's of samples
 
 ## Results
 * The PCA analysis showed that groups of isolates from carriers and patients actually form separate clusters.
-* We also established significant variables involved in the formation of the group variable “source of extraction,” for example, genes encoding Acetyltransferase, GNAT family; 6-phospho-beta-glucosidase.
+* We also established significant variables involved in the formation of the group variable “source of extraction”, for example, genes encoding Acetyltransferase, GNAT family; 6-phospho-beta-glucosidase (Gene Comparator detected new alleles).
 It is necessary to analyze the literature to understand exactly how these genes affect the invasiveness of *S.pneumoniae*
 Thus, we completed almost all the tasks, obtained valid results and a lot of data for further research.
 
+![Illustration PCA](https://github.com/UlianaPodenkova/BI_spring2020/raw/master/EzD51XtpV8I.png)
+![Illustration PCA2](https://github.com/UlianaPodenkova/BI_spring2020/raw/master/res1.png)
+![Illustration PCA2](https://github.com/UlianaPodenkova/BI_spring2020/raw/master/phosphobetaglucosidase.png)
 ## References
 1. PubMLST.org
 2. Tange O. et al. Gnu parallel-the command-line power tool //The USENIX Magazine. – 2011. – Т. 36. – №. 1. – С. 42-47.
@@ -118,3 +121,4 @@ Thus, we completed almost all the tasks, obtained valid results and a lot of dat
 5. Wick R. R. et al. Unicycler: resolving bacterial genome assemblies from short and long sequencing reads //PLoS computational biology. – 2017. – Т. 13. – №. 6. – С. e1005595.
 6. Metagenomic microbial community profiling using unique clade-specific marker genes
 Nicola Segata, Levi Waldron, Annalisa Ballarini, Vagheesh Narasimhan, Olivier Jousson, Curtis Huttenhower. Nature Methods, 8, 811–814, 2012
+
