@@ -107,7 +107,7 @@ To perform the further analysis we created new table, containing id's of samples
 ## Results
 * The PCA analysis showed that groups of isolates from carriers and patients actually form separate clusters.
 * We also established significant variables involved in the formation of the group variable “source of extraction”, for example, genes encoding Acetyltransferase, GNAT family; 6-phospho-beta-glucosidase (Gene Comparator detected new alleles).
-It is necessary to analyze the literature to understand exactly how these genes affect the invasiveness of *S.pneumoniae*
+It is necessary to analyze the literature to understand exactly how these genes affect the invasiveness of *S.pneumoniae*.
 Thus, we completed almost all the tasks, obtained valid results and a lot of data for further research.
 
 ![Illustration PCA](https://github.com/UlianaPodenkova/BI_spring2020/raw/master/EzD51XtpV8I.png)
