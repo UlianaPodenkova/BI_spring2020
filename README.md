@@ -12,20 +12,20 @@
 
 ## System requirements
 * 12CPU 24Gb, Ubuntu18.04
-* SRA tools  "fastq-dump" version 2.10.3
-* FastQC v0.11.5
-* multiqc, version 1.8
+* SRA tools  "fastq-dump" version 2.10.3 ( https://github.com/ncbi/sra-tools )
+* FastQC v0.11.5 ( https://www.bioinformatics.babraham.ac.uk/projects/fastqc/ )
+* multiqc, version 1.8 ( https://multiqc.info/ )
 * cutadapt 1.15
-* TrimGalore-0.6.5
+* TrimGalore-0.6.5 ( https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/ )
 * GNU parallel 20161222 (http://www.gnu.org/software/parallel Tange O. et al. Gnu parallel-the command-line power tool //The USENIX Magazine. – 2011. – Т. 36. – №. 1. – С. 42-47.)
-* MetaPhlAn2
+* MetaPhlAn2 ( https://huttenhower.sph.harvard.edu/metaphlan )
 * For Unicycler pipeline:
-  * SPAdes-3.14.1-Linux 
+  * SPAdes-3.14.1-Linux ( http://cab.spbu.ru/software/spades/ )
   * makeblastdb 2.6.0+
   * tblastn 2.6.0+
-  * bowtie2 2.3.4.1
+  * bowtie2 2.3.4.1 ( http://bowtie-bio.sourceforge.net/bowtie2/index.shtml )
   * bowtie2-build 2.3.4.1
-  * samtools 1.7
+  * samtools 1.7  ( http://www.htslib.org/ )
   * java 11.0.7
 * R version 3.5.3
 * R packages dummies, FactoMineR, factoextra
@@ -97,7 +97,7 @@ Command to start the assembling :
 while read i; do unicycler -1 “$i”_1_val_1.fq.gz -2 “$i”_2_val_2.fq.gz  -o /mnt/data/assembl2 -t 10 --spades_path /home/daria/soft/SPAdes-3.14.1-Linux/bin/spades.py
  ; done < my_reads
 ```
-7. Using the Genome Comparator (pubMLST) we performed a comparison of *de novo* assembled *S.pneumoniae* genomes 81 sequence type.
+7. Using the Genome Comparator (pubMLST, https://pubmlst.org/bigsdb?db=pubmlst_spneumoniae_isolates_pgl ) we performed a comparison of *de novo* assembled *S.pneumoniae* genomes 81 sequence type.
 Genomes of *S.pneumoniae* isolates from blood and cerebrospinal fluid were compared with genomes of isolates from the nasopharynx of the same genetic line. Thus as a result of comparison, we received a table with different alleles of the detected genes (we tested the core genome of *S.pneumoniae*), table named __variable1__.
 To perform the further analysis we created new table, containing id's of samples and source of their extraction (blood/cerebrospinal fluid/nasopharynx), named __id81source__
 
